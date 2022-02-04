@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <link rel="icon"
+        href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRO6dhiUkL8_Jv-5Wj75D8xGsfZYGWaDmwV9g&usqp=CAU"
+        type="image/x-icon">
+    <style>
+        .atom {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            background: -webkit-radial-gradient(center, ellipse cover, #000000 0%, #000000 15%, #ffffff 5%, #ffffff 5%, #ffffff 10%, #ffffff 100%);
+            border-radius: 100px;
+            padding: 0 30px 30px 0;
+        }
+
+        .electron {
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            background: transparent;
+            border-radius: 150px;
+            border: 8px solid black;
+            box-shadow: 0 0 0 5px white inset, 0 0 0 5px white;
+            animation: electron1 1s linear infinite;
+            transform: rotateY(60deg) rotateX(-60deg) rotate(0);
+            line-height: 200px;
+            text-align: center;
+            font-size: 50px;
+            color: black;
+        }
+
+        .electron:before {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 5px;
+            background: black;
+            top: -7.5px;
+            left: 100px;
+        }
+
+        .electron:nth-of-type(2) {
+            transform: rotateY(-60deg) rotateX(-60deg) rotate(0);
+            animation: electron2 1s linear infinite;
+        }
+
+        .electron:nth-of-type(3) {
+            transform: rotateY(75deg) rotateX(0) rotate(180deg);
+            animation: electron3 1s linear infinite;
+        }
+
+        @-webkit-keyframes electron1 {
+            from {
+                transform: rotateY(60deg) rotateX(-60deg) rotate(0);
+            }
+
+            to {
+                transform: rotateY(60deg) rotateX(-60deg) rotate(360deg);
+            }
+        }
+
+        @-webkit-keyframes electron2 {
+            from {
+                transform: rotateY(-60deg) rotateX(-60deg) rotate(0);
+            }
+
+            to {
+                transform: rotateY(-60deg) rotateX(-60deg) rotate(360deg);
+            }
+        }
+
+        @-webkit-keyframes electron3 {
+            from {
+                transform: rotateY(75deg) rotateX(0) rotate(180deg);
+            }
+
+            to {
+                transform: rotateY(75deg) rotateX(0) rotate(540deg);
+            }
+        }
+
+        .upd1 {
+            position: relative;
+            animation-name: example1;
+            animation-duration: 0.5s;
+            animation-delay: 3s;
+            animation-fill-mode: both;
+        }
+
+        @keyframes example1 {
+            from {
+                right: 600px;
+                background-color: black;
+            }
+
+            to {
+                right: 0px;
+                background-color: rgba(128, 0, 128, 0.5);
+            }
+        }
+
+        .upd2 {
+            position: relative;
+            animation-name: example2;
+            animation-duration: 0.5s;
+            animation-delay: 2.5s;
+            animation-fill-mode: both;
+        }
+
+        @keyframes example2 {
+            from {
+                right: 800px;
+                background-color: black;
+            }
+
+            to {
+                right: 0px;
+                background-color: rgba(0, 0, 255, 0.5);
+            }
+        }
+
+        .upd3 {
+            position: relative;
+            animation-name: example3;
+            animation-duration: 0.51s;
+            animation-delay: 2s;
+            animation-fill-mode: both;
+        }
+
+        @keyframes example3 {
+            from {
+                right: 1000px;
+                background-color: black;
+            }
+
+            to {
+                right: 0px;
+                background-color: rgba(0, 128, 0, 0.514);
+            }
+        }
+
+        .upd4 {
+            position: relative;
+            animation-name: example4;
+            animation-duration: 0.5s;
+            animation-delay: 1.5s;
+            animation-fill-mode: both;
+        }
+
+        @keyframes example4 {
+            from {
+                right: 1200px;
+                background-color: black;
+            }
+
+            to {
+                right: 0px;
+                background-color: rgba(255, 0, 0, 0.521);
+            }
+        }
+
+        .upd5 {
+            position: relative;
+            animation-name: example5;
+            animation-duration: 0.5s;
+            animation-delay: 1s;
+            animation-fill-mode: both;
+        }
+
+        @keyframes example5 {
+            from {
+                right: 1400px;
+                background-color: black;
+            }
+
+            to {
+                right: 0px;
+                background-color: lawngreen;
+            }
+        }
+
+        .upd6 {
+            position: relative;
+            animation-name: example6;
+            animation-duration: 0.5s;
+            animation-delay: 0.5s;
+            animation-fill-mode: both;
+        }
+
+        @keyframes example6 {
+            from {
+                right: 1600px;
+                background-color: black;
+            }
+
+            to {
+                right: 0px;
+                background-color: lightblue;
+            }
+        }
+
+        .dwn1 {
+            position: relative;
+            animation-name: example7;
+            animation-duration: 1s;
+            animation-delay: 4s;
+            animation-fill-mode: both;
+        }
+
+        @keyframes example7 {
+            from {
+                top: 200px;
+                background: url("https://images.pexels.com/photos/1509534/pexels-photo-1509534.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+            }
+
+            to {
+                top: 0px;
+                background: url("https://images.pexels.com/photos/1509534/pexels-photo-1509534.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+            }
+        }
+
+        .dwn2 {
+            position: relative;
+            animation-name: example8;
+            animation-duration: 1s;
+            animation-delay: 3s;
+            animation-fill-mode: both;
+        }
+
+        @keyframes example8 {
+            from {
+                top: 400px;
+                background: url("https://images.pexels.com/photos/957010/milky-way-starry-sky-night-sky-star-957010.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+            }
+
+            to {
+                top: 0px;
+                background: url("https://images.pexels.com/photos/957010/milky-way-starry-sky-night-sky-star-957010.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+            }
+        }
+
+        .dwn3 {
+            position: relative;
+            animation-name: example9;
+            animation-duration: 1s;
+            animation-delay: 2s;
+            animation-fill-mode: both;
+        }
+
+        @keyframes example9 {
+            from {
+                top: 600px;
+                background: url("https://images.pexels.com/photos/1545505/pexels-photo-1545505.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+            }
+
+            to {
+                top: 0px;
+                background: url("https://images.pexels.com/photos/1545505/pexels-photo-1545505.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+            }
+        }
+
+        .dwn4 {
+            position: relative;
+            animation-name: example10;
+            animation-duration: 1s;
+            animation-delay: 1s;
+            animation-fill-mode: both;
+        }
+
+        @keyframes example10 {
+            from {
+                top: 800px;
+                background: url("https://images.pexels.com/photos/1293120/pexels-photo-1293120.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+            }
+
+            to {
+                top: 0px;
+                background: url("https://images.pexels.com/photos/1293120/pexels-photo-1293120.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+            }
+        }
+    </style>
+    <style>
+        .btn1 {
+            background-color: white;
+            color: black;
+            text-align: center;
+            font-size: 20px;
+            transition: 0.3s;
+            border-radius: 10px;
+            padding: 7px;
+        }
+
+        .btn1:hover {
+            background-color: black;
+            color: white;
+            -webkit-background-clip: text;
+
+        }
+
+        .img1 {
+            background: url("https://images.pexels.com/photos/319382/pexels-photo-319382.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+        }
+
+        .text1:hover {
+            font-size: 40px;
+            font-family: Arial, Helvetica, sans-serif;
+            background: black;
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+        }
+
+        #spin {
+            color: black;
+            font-weight: bold;
+        }
+
+        #spin:after {
+            content: "";
+            animation: spin 5s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                content: "C7H16 + 11O2 → 7CO2 + 8H2O";
+                color: black;
+            }
+
+            10% {
+                content: "2C8H18 + 25O2(g) ⟶ 16CO2 + 18H2O";
+            }
+
+            20% {
+                content: "Pb(NO3)2 + 2NaCl → 2NaNO3 + PbCl2";
+            }
+
+            30% {
+                content: "C3H8 + 5O2 → 3CO2 + 4H2O";
+            }
+
+            40% {
+                content: "Ca(OH)2 + 2HNO3 → Ca(NO3)2 + 2H2O";
+            }
+
+            50% {
+                content: "FeCl3 + 3NaOH → Fe(OH)3 + 3NaCl";
+            }
+
+            60% {
+                content: "C6H12O6 + 6O2 → 6CO2 + 6H2O";
+            }
+
+            70% {
+                content: "CH4 + 2O2 → CO2 + 2H2O";
+            }
+
+            80% {
+                content: "Mg + 2HCl → MgCl2 + H2";
+            }
+
+            90% {
+                content: "4Al + 3O2 → 2Al2O3";
+            }
+        }
+    </style>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <title>Equation Balancer</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+</head>
+
+<body class="font-monospace">
+    <nav class="navbar navbar-expand-lg bg-dark navbar-light ">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                <div class="atom">
+                    <div class="electron"></div>
+                    <div class="electron"></div>
+                    <div class="electron"></div>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse navbar-default" id="hidden-nav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <div class="card-group">
+                        <div class="card text-white bg-dark mb-3 " style="max-width: 3rem;"></div>
+                        <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                            <div class="card-body colorpurple upd1">
+                                <h5 class="card-title">HOME</h5>
+                                <br>
+                                <a href="/" style="text-decoration:none" class="btn1"><b>HOME</b></a>
+                            </div>
+                        </div>
+                        <div class="card text-white bg-dark mb-3 " style="max-width: 1rem;"></div>
+                        <div class="card text-white bg-dark mb-3 " style="max-width: 18rem;">
+                            <div class="card-body colorblue upd2">
+                                <h5 class="card-title">Equation Balancing</h5>
+                                <a href="/equation" style="text-decoration:none" class="btn1"><b>BALANCER</b></a>
+                            </div>
+                        </div>
+                        <div class="card text-white bg-dark mb-3 " style="max-width: 1rem;"></div>
+                        <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                            <div class="card-body colorgreen upd3">
+                                <h5 class="card-title ">Engineering Numericals</h5>
+                                <a href="/numericals" style="text-decoration:none" class="btn1"><b>NUMERICALS</b></a>
+                            </div>
+                        </div>
+                        <div class="card text-white bg-dark mb-3 " style="max-width: 1rem;"></div>
+                        <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                            <div class="card-body colorred upd4">
+                                <h5 class="card-title">The Modern Periodic table </h5>
+                                <a href="/periodic" style="text-decoration:none" class="btn1"><b>PERIODIC TABLE</b></a>
+                            </div>
+                        </div>
+                        <div class="card text-white bg-dark mb-3 " style="max-width: 1rem;"></div>
+                        <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                            <div class="card-body coloryellow upd5">
+                                <h5 class="card-title">Calculate Molecular Mass</h5>
+                                <a href="/mass" style="text-decoration:none" class="btn1"><b>MOLECULAR MASS</b></a>
+                            </div>
+                        </div>
+                        <div class="card text-white bg-dark mb-3 " style="max-width: 1rem;"></div>
+                        <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                            <div class="card-body colorlightblue upd6">
+                                <h5 class="card-title">CONTACT US </h5>
+                                <br>
+                                <a href="/contact" style="text-decoration:none" class="btn1"><b>CONTACT US</b></a>
+                            </div>
+                        </div>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <h3 class="container text-center" style="color : black">
+        <b>
+            <img src="http://www.pccoepune.com/images/PCCOE_LOGO.jpg" width=200px height=155px>
+                PIMPRI CHINCHWAD COLLEGE OF ENGINEERING, PUNE
+        </b>
+    </h3>
+    <h3 class="container bg-success" style="color : black">
+        <b>
+            Developed By : Ajinkya Patil<br>
+            Email : ajinkya.patil20@pccoepune.org<br>
+            Phone no. : +91 9423698938<br>
+        </b>
+    </h3>
+    <br>
+    <h3 class="container bg-warning" style="color : black">
+        <b>
+            Developed By : Deokumar Manwar<br>
+            Email : deokumar.manwar20@pccoepune.org<br>
+            Phone no. : +91 9175210151 <br>
+        </b>
+    </h3>
+    <br>
+    <h3 class="container bg-danger" style="color : black">
+        <b>
+            Developed By : Priyanka Pole<br>
+            Email : priyanka.pol20@pccoepune.org<br>
+            Phone no. : +91 9137837212<br>
+        </b>
+    </h3>
+    <br>
+    <h3 class="container bg-primary" style="color : black">
+        <b>
+            Developed By : Shreya Thorvat<br>
+            Email : shreya.thorvat20@pccoepune.org<br>
+            Phone no. : +91 8530146116<br>
+        </b>
+    </h3>
+    </b>
+</body>
+
+</html>

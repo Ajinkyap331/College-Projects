@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <link rel="icon"
+    href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRO6dhiUkL8_Jv-5Wj75D8xGsfZYGWaDmwV9g&usqp=CAU"
+    type="image/x-icon">
+  <style>
+    /* CSS comes here */
+    body {
+      font-family: arial;
+    }
+
+    button {
+      padding: 10px;
+      background-color: #6a67ce;
+      color: #FFFFFF;
+      border: 0px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    #output {
+      background-color: #F9F9F9;
+      padding: 10px;
+      width: 100%;
+      margin-top: 20px;
+      line-height: 30px;
+    }
+
+    .hide {
+      display: none;
+    }
+
+    .show {
+      display: block;
+    }
+  </style>
+
+  <style>
+    .atom {
+      position: relative;
+      width: 120px;
+      height: 120px;
+      background: -webkit-radial-gradient(center, ellipse cover, #000000 0%, #000000 15%, #ffffff 5%, #ffffff 5%, #ffffff 10%, #ffffff 100%);
+      border-radius: 100px;
+      padding: 0 30px 30px 0;
+    }
+
+    .electron {
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      background: transparent;
+      border-radius: 150px;
+      border: 5px solid black;
+      box-shadow: 0 0 0 5px white inset, 0 0 0 5px white;
+      animation: electron1 1s linear infinite;
+      transform: rotateY(60deg) rotateX(-60deg) rotate(0);
+      line-height: 200px;
+      text-align: center;
+      font-size: 50px;
+      color: black;
+    }
+
+    .electron:before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-radius: 5px;
+      background: black;
+      top: -7.5px;
+      left: 100px;
+    }
+
+    .electron:nth-of-type(2) {
+      transform: rotateY(-60deg) rotateX(-60deg) rotate(0);
+      animation: electron2 1s linear infinite;
+    }
+
+    .electron:nth-of-type(3) {
+      transform: rotateY(75deg) rotateX(0) rotate(180deg);
+      animation: electron3 1s linear infinite;
+    }
+
+    @-webkit-keyframes electron1 {
+      from {
+        transform: rotateY(60deg) rotateX(-60deg) rotate(0);
+      }
+
+      to {
+        transform: rotateY(60deg) rotateX(-60deg) rotate(360deg);
+      }
+    }
+
+    @-webkit-keyframes electron2 {
+      from {
+        transform: rotateY(-60deg) rotateX(-60deg) rotate(0);
+      }
+
+      to {
+        transform: rotateY(-60deg) rotateX(-60deg) rotate(360deg);
+      }
+    }
+
+    @-webkit-keyframes electron3 {
+      from {
+        transform: rotateY(75deg) rotateX(0) rotate(180deg);
+      }
+
+      to {
+        transform: rotateY(75deg) rotateX(0) rotate(540deg);
+      }
+    }
+  </style>
+  <style>
+    .btn1 {
+      background-color: white;
+      color: black;
+      text-align: center;
+      font-size: 20px;
+      transition: 0.3s;
+      border-radius: 10px;
+      padding: 7px;
+    }
+
+    .btn1:hover {
+      background-color: black;
+      color: white;
+      -webkit-background-clip: text;
+
+    }
+
+    .btn2 {
+      background-color: white;
+      color: black;
+      text-align: center;
+      font-size: 20px;
+      transition: 0.3s;
+      border-radius: 10px;
+      padding: 7px;
+    }
+
+    .btn2:hover {
+      background-color: green;
+      color: white;
+    }
+
+    .img1 {
+      background: url("https://images.pexels.com/photos/1293120/pexels-photo-1293120.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+    }
+
+    .img2 {
+      background: chartreuse;
+    }
+
+    .text1:hover {
+      font-size: 40px;
+      font-family: Arial, Helvetica, sans-serif;
+      background: black;
+      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text;
+    }
+
+    #spin {
+      color: black;
+      font-weight: bold;
+    }
+
+    #spin:after {
+      content: "";
+      animation: spin 10s linear infinite;
+    }
+
+    @keyframes spin {
+      0% {
+        content: "C7H16 + 11O2 → 7CO2 + 8H2O";
+      }
+
+      10% {
+        content: "2C8H18 + 25O2(g) ⟶ 16CO2 + 18H2O";
+      }
+
+      20% {
+        content: "Pb(NO3)2 + 2NaCl → 2NaNO3 + PbCl2";
+      }
+
+      30% {
+        content: "C3H8 + 5O2 → 3CO2 + 4H2O";
+      }
+
+      40% {
+        content: "Ca(OH)2 + 2HNO3 → Ca(NO3)2 + 2H2O";
+      }
+
+      50% {
+        content: "FeCl3 + 3NaOH → Fe(OH)3 + 3NaCl";
+      }
+
+      60% {
+        content: "C6H12O6 + 6O2 → 6CO2 + 6H2O";
+      }
+
+      70% {
+        content: "CH4 + 2O2 → CO2 + 2H2O";
+      }
+
+      80% {
+        content: "Mg + 2HCl → MgCl2 + H2";
+      }
+
+      90% {
+        content: "4Al + 3O2 → 2Al2O3";
+      }
+    }
+  </style>
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous"> -->
+
+  <title>Equation Balancer</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+</head>
+
+<body class="img1 font-monospace">
+  <nav class="navbar navbar-expand-lg bg-dark navbar-light ">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">
+        <div class="atom">
+          <div class="electron"></div>
+          <div class="electron"></div>
+          <div class="electron"></div>
+        </div>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse navbar-default" id="hidden-nav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <div class="card-group">
+            <div class="card text-white  mb-3" style="max-width: 18rem;"
+              style="background-color: rgba(128, 0, 128, 0.5);">
+              <div class="card-body colorpurple upd1">
+                <h5 class="card-title">HOME</h5>
+                <br>
+                <a href="/" style="text-decoration:none" class="btn1"><b>HOME</b></a>
+              </div>
+            </div>
+            <div class="card text-white mb-3 " style="max-width: 18rem; background-color: rgba(0, 0, 255, 0.5);">
+              <div class="card-body colorblue upd2">
+                <h5 class="card-title">Equation Balancing</h5>
+                <a href="/equation" style="text-decoration:none" class="btn1"><b>BALANCER</b></a>
+              </div>
+            </div>
+            <div class="card text-white mb-3" style="max-width: 18rem; background-color: rgba(0, 128, 0, 0.514);">
+              <div class="card-body colorgreen upd3">
+                <h5 class="card-title ">Engineering Numericals</h5>
+                <a href="/numericals" style="text-decoration:none" class="btn1"><b>NUMERICALS</b></a>
+              </div>
+            </div>
+            <div class="card text-white mb-3" style="max-width: 18rem; background-color: rgba(255, 0, 0, 0.521);">
+              <div class="card-body colorred upd4">
+                <h5 class="card-title">The Modern Periodic table </h5>
+                <a href="/periodic" style="text-decoration:none" class="btn1"><b>PERIODIC TABLE</b></a>
+              </div>
+            </div>
+            <div class="card text-white mb-3" style="max-width: 18rem; background-color: lawngreen;">
+              <div class="card-body coloryellow upd5">
+                <h5 class="card-title">Calculate Molecular Mass</h5>
+                <a href="/mass" style="text-decoration:none" class="btn1"><b>MOLECULAR MASS</b></a>
+              </div>
+            </div>
+            <div class="card text-white mb-3" style="max-width: 18rem; background-color: lightblue;">
+              <div class="card-body colorlightblue upd6">
+                <h5 class="card-title">CONTACT US </h5>
+                <br>
+                <a href="/contact" style="text-decoration:none" class="btn1"><b>CONTACT US</b></a>
+              </div>
+            </div>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <br><br>
+  <h2 class="text-center"><span id="spin"></span></h2>
+  <br><br>
+  <div class="container">
+    <h2 class="text-center" style="color: Black">
+      <b>
+        <u>
+          Please Read The Following Steps Before:<br>
+        </u>
+      </b>
+    </h2>
+    <br>
+    <h3 style="color: rgba(0, 0, 0, 0.788)">
+      <b>
+        1. You Have to Add The Elements Properly |Ca| and |CO| respectively<br>
+        2. To predict the reaction add only one side |A+B....|<br>
+        3. You can also add name |hydrogen + oxygen = water|<br>
+        4. To use speech to balance please try to speak the compounds clearly<br>
+      </b>
+    </h3>
+    <br>
+    <form method="post">
+      {% csrf_token %}
+      <div>
+        <b>
+          <h1 class="center-screen text-dark " style=" background-color: yellow; font-size:40px" id="demo">
+            {{var}}
+          </h1>
+        </b>
+      </div>
+      <br><br>
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="tags1" placeholder=" " name="name7">
+        <label for="floatingInput"> <b>
+            Equation |A+B..=C+D..|
+          </b></label>
+      </div>
+      <div class="container">
+        <div class="center">
+          <button class="btn2" id="mainb"><b>BALANCE</b></button>
+          <button type="button" onclick="runSpeechRecognition()">Speech to Text</button> &nbsp; <span
+            id="action"></span>
+        </div>
+      </div>
+    </form>
+    <script>
+      /* JS comes here */
+      function runSpeechRecognition() {
+        let arr = [
+          "H2 + O2 = H2O", "NaOH + HCl = NaCl + H2O", "CH4 + O2 = CO2 + H2O", "C + O2 = CO2", "Al + O2 = Al2O3", "Na2CO3 + H2O = NaOH + CO2", "Fe + NaOH + O2 = NaFeO2 + H2", "Na2R + HCl = H2R + NaCl", "CaR + HCl = H2R + CaCl2", "Na2Ze + CaCl2 = CaZe + NaCl", "MgCl2 + Na2Ze = MgZe + NaCl", "Na2Ze + MgSO4 = MgZe + Na2SO4", "CaZe + NaCl = Na2Ze + CaCl2", "MgCl2 + Na2Ze = NaCl + MgZe", "NaCl + CH3COONa = NaOH + CH3COOH", "H2O + K2CO3 = CO2 + KOH", "C6H12O6 = C2H5OH + CO2", "2C6H12O6 = H2O + C12H22O11", "CH4 + H2O = CO + H2", "CO + H2O = CO2 + H2", "C + H2O = CO + H2", "NaAlH4 = Na3AlH6 + Al + H2", "S + O2 = SO2", "H2O + CO2 = O2 + C2H6", "H2O + CO2 = O2 + C3H8", "H2O + CO2 = O2 + C4H10", "C2H4 + O2 = CO2 + H2O", "Fe + H2S = FeS + H", "C + H2 = CH4", "NaF + H2S = Na2S + HF", "CO2 + H2O = H4CO4", "HX + MOH = MX + HOH", "K + AlSO4 = Al + KSO4", "carbon + oxygen = carbon-dioxide", "Fe2O3 + C = Fe + CO2", "methane + oxygen = carbon-dioxide + water", "N2O3 + H2O  = HNO2", "CaCO3 =  CaO + CO2", "NaF + H2S = Na2S + HF", "CO2 + H2O = H4CO4", "HX + MOH = MX + HOH", "K + AlSO4 = Al + KSO4", "C2H6 + O2 = CH3COO + H2O", "Na + AIBr3 = AI + NaBr", "Na + Co2PO4 = Co + NaPO4", "C4H9Br + C2H9NaO5 = C6H12O2 + NaBr + H2O", "P4 + Ca(OH)2 + H2O = PH3 + CaHPO3", "HCl + Zi = H2 + ZiCl2", "CuSO4 + HgCl = Cu2Cl2 + HgSO4", "Ru + Cl + Pb3As2 = Ru2As3 + PbCl2", "Ru + Cl2 + Pb3As2 = Ru2As3 + PbCl3", "C4H5SO + O2 = CO2 + SO4 + H2O", "RuCl2 + Pb3As2 = Ru3As2 + PbCl2", "BaCO3 + Al = BaO + Al3C4 + Al2O3", "PO4H3 + NaOH = PO4Na3 + H2O", "Cu5O2 = Cu + O2", "C6H2O4 + H2O = C2H2O4 + CH4O", "C6H11O11 + O = CO2 + H2O", "As25 + KBrO3 + H2O = KBr + H3AsO4", "C3H4O + KMnO4 + H2O = MnO2 + KOH + C3H5O4K", "LiH = H2 + Li2", "CH4 + SO3 = H2S + CO2 + H2", "KHCO3 = C2K2O4 + H2O + O2", "Na + HC2H5OH + HOH = C3H6O2 + H2O + SO2 = Na2SO4 + H2", "C4H7O2 + O2 = C2H6O + CH3COO", "Al2O3 + HNO3 = Al3 + NO3 + H2O", "Ag2NO3 + CrBr2 = AgBr + CrNO3", "OH + C20H14O4 = H2CO2 + H2O", "C5H4O2 + H2 = C5H8 + H2O", "C16H30O2 + C10H24 = C16H32O2 + C6H6", "C2H12O6 + H2SO4 = CO2 + SO2 + H2O", "CaH + O2 = Ca + H2O", "P2O5 + Cl2 + CO = PCl5 + CO2", "N2 + H2O = H3N NH4 + PO4 = NH3 + H3PO4", "Fe + HCl + K2Cr2O7 = FeCl2 + KCl + CrCl3 + H2O", "Na2HPO4 + H2O = NaOH + PO4 + H", "Fe5S2 + O2 = Fe2O3 + SO2", "KMnO4 + C10H24 = KMnO2 + CO2 + H2O", "C2H5COH + CH3COOH = CH3COOC2H5", "H2S + KOH = K2S + H2O", "HgCl2 + Al = AlCl3 + Hg",
+          "C7H8 + CHNO3 = C7H5 + N3O6 + H2O", "CH4 + S8 = C2S + H2S", "SO2 + Cl = SOCl2 + ClO2", "FeCl3 + Li = LiCl + Fe", "V3O3 + H2 = V203 + H2O", "Fe3Al2 + O2 = Al2O3 + Fe", "Fe5S2 + O2 = Fe2O3 + SO2", "NH4 + PO4 = NH3 + H3PO4", "Na + Cl = NaCl", "Ti + HNO3 = Ti(NO3)4 + H", "KCl + H8N2O4S = K2O4S + NH4Cl", "BeO + H2O = HO + Be2O", "N2H3 + O2 = NO4 + H2O", "Zn + H2SO3 = Zn2(SO3) + H2", "K2S + H2O + O2 = K2S2O3 + KOH", "Si3H3 + O3 = SiO2 + H2O3", "Sc + C = ScC3", "Zr3P4 + O2 = Zr2O3 + P4", "LiNO3 = Li2 + N2 + O2", "O2 + P = P2O4", "HSO4 + Zn = ZnSO4 + H2", "Na + Cl = NaCl", "TeCl4 + Zn + HCl = H2Te + ZnCl2", "Al2S3 = Al3 + S", "Al + O2 = Al2O3", "Mg + O2 = MgO", "NH3 + C2H4 = C2H6 + N2", "S2 + K2SO3 = K2S2O3", "CH4 + HO2 = CO2 + H2", "NaCl + ZnCO3 = ZnCl2 + Na2CO3", "AlI + F2 = AlF + I2", "Fe3CO3 + Cs = CsCO3 + Fe", "CO2 + H2O = CH3 + H2O", "SiO2 + H2O3 = SiH3 + O2", "H2S + HNO3 = S + NO + H2O", "CH4 + CS2 = C2H6S", "SiO2 + H2O3 = SiH3 + O2", "Al + NH4NO3 = N2 + Al2O3 + H2O", "S + HNO3 = H2SO4 + NO2 + H2O", "NH4ClO4 = H2O + O2 + N2 + Cl2", "Br2 + C2H6 = CBr4 + H2", "CaCO3 = CaO + CO2", "N2O3 + H2O = HNO2", "P4O10 + H2O = H3PO4", "KF + O2 = KO + F2", "Cr2F2 + H2O = Cr + HF + O2", "C8H18 + O2 = CO2 + H2O",
+          "Cl2 + Bi2O3 + H2O = Bi2O5 + HCl", "BaSO3 + O2 = BaSO4", "H2O + Mg = H + MgO", "C9H20 + O2 = CO2 + H2O", "Al + F = AlF3", "PO4 + Li2 = Li3PO4", "Al + Ce = AlCe2", "CaS + O2 = CaSO3", "PbS2 + Fe = Fe2S3 + Pb", "KCl3 = KCl + O2", "SiCl4 + H2O = H4SiO4 + HCl", "H2Co3 = Co + H", "H2SO4 + HI = H2S + I2 + H2O", "Na2CO3 + HCl = NaCl + H2O + CO2", "C7H6O2 + HCl = NaCl + H2O + CO2", "Na2O + PO = PNa + O2", "KClO3 = KCl + O2", "magnesium + oxygen = magnesium-oxide", "SiCl4 + H2O  =  H4SiO4 + HCl", "CuO + HCl  = CuCl2 + H2O", "Al + HCl = AlCl3 + H2", "H2SO4 + HI = H2S + I2 + H2O", "C7H6O2 + O2 = CO2 + H2O", "sodium + chloride = sodium-chloride", "Na2CO3 + HCl = NaCl + H2O + CO2", "SiCl4 + H2O = H4SiO4 + HCl", "Al + HCl = AlCl3 + H2", "Fe2(SO4)3 + KOH = K2SO4 + Fe(OH)3", "Ca(PO4)2 + SiO2 → P4O10 + CaSiO3", "Al2(SO4)3 + Ca(OH)2 → Al(OH)3 + CaSO4", "CaI2 + Na2O4S = CaSO4 + INa", "KI3 + Na2S = S + NaI + KI", "Na + FePO4 = Fe + Na3PO4", "AgOH + Ni2 = Ni(OH)2 + Ag", "Fe + MgS = Mg + Fe2S3", "S + F2 = FS6", "MgO + K = Mg + K2O", "SnO2 + H2 = Sn + H2O", "CaO2 + P2O5 = Ca3P2 + O2",
+          "LiOH + Co2 = LiCo3 + OH", "Cu(OH)2 + H2 = Cu2 + H2O", "NO2 + H2O = HN3 + O2", "oxygen + hydrogen = water", "butane + oxygen = carbon-dioxide + water", "sodium + oxygen = sodium-oxide", "aluminium + oxygen = aluminium-oxide", "calcium + oxygen = calcium-oxide", "calcium-hydroxide + carbon-dioxide = calcium-carbonate + water", "magnesium + oxygen = magnesium-oxide", "sodium + water = sodium-hydroxide + hydrogen",
+        ];
+        var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition
+        var recognition = new SpeechRecognition();
+        // var SpeechGrammerList = SpeechGrammerList || webkitSpeechGrammerList
+        // var speechRecognitionGrammerList = new SpeechGrammerList();
+        // var grammer = '#JSGF V1.0;'
+        // speechRecognitionGrammerList.addFromString(grammer, 1);
+        // recognition.grammer = speechRecognitionGrammerList;
+
+
+        // This runs when the speech recognition service starts
+        recognition.onstart = function () {
+          action.innerHTML = "<small><b>listening, please speak...</b></small>";
+        }
+
+        recognition.onspeechend = function () {
+          action.innerHTML = "<small>Stopped listening, Hope you are done...</small>";
+          recognition.stop();
+        }
+        recognition.onerror = function () {
+          if (event.error == 'no-speech') {
+            instructions.text('No speech was detected. Try again.');
+          };
+        }
+
+        // This runs when the speech recognition service returns result
+        recognition.onresult = function (event) {
+          var transcript = event.results[0][0].transcript;
+          var confidence = event.results[0][0].confidence;
+          var conFloat = parseFloat(confidence);
+          var n = transcript.indexOf("+");
+          transcript = transcript.toLowerCase()
+          if (n != -1 && conFloat >= 0.8) {
+            transcript = transcript.replace("is equal to", "=")
+            transcript = transcript.replace("is equals to", "=")
+            transcript = transcript.replace("equal to", "=")
+            transcript = transcript.replace("equals to", "=")
+            transcript = transcript.replace("plus", "+")
+            transcript = transcript.replace("add", "+")
+            var B = []
+            if (transcript.includes("=")) {
+              var transcript = transcript.split("=");
+              for (var i = 0; i < transcript.length; i++) {
+                var comp = transcript[i].split("+")
+                for (var j = 0; j < comp.length; j++) {
+                  comp[j] = comp[j].trim()
+                  comp[j] = comp[j].replace(' ', '-')
+                  //console.log(comp[j])
+                }
+                //console.log(comp)
+                var A = comp.join(" + ")
+                B.push(A)
+              }
+              B = B.join(" = ")
+              transcript = B
+            }
+            else if (transcript.includes("+")) {
+              var comp = transcript.split("+")
+              for (var j = 0; j < comp.length; j++) {
+                comp[j] = comp[j].trim()
+                comp[j] = comp[j].replace(' ', '-')
+                //console.log(comp[j])
+              }
+              //console.log(comp)
+              var A = comp.join(" + ")
+              transcript = A
+            }
+            else{
+              transcript = "INVALID Equation SPEAK AGAIN"
+            }
+            document.getElementById("tags1").value = transcript;
+            arr.forEach(function (item, index, array) {
+              var n1 = item.indexOf(transcript);
+              if (n1 != -1) {
+
+                document.getElementById("mainb").click();
+              }
+            })
+          }
+          else {
+            document.getElementById("tags1").value = "CAN NOT HEAR PROPERLY TRY AGAIN";
+          }
+
+        };
+
+        // start recognition
+        recognition.start();
+      }
+    </script>
+</body>
+
+</html>
+<style>
+  h1 {
+    text-align: center;
+  }
+</style>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"
+  integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+  $(function () {
+    var availableTags = [
+      "H2 + O2 = H2O", "NaOH + HCl = NaCl + H2O", "CH4 + O2 = CO2 + H2O", "C + O2 = CO2", "Al + O2 = Al2O3", "Na2CO3 + H2O = NaOH + CO2", "Fe + NaOH + O2 = NaFeO2 + H2", "Na2R + HCl = H2R + NaCl", "CaR + HCl = H2R + CaCl2", "Na2Ze + CaCl2 = CaZe + NaCl", "MgCl2 + Na2Ze = MgZe + NaCl", "Na2Ze + MgSO4 = MgZe + Na2SO4", "CaZe + NaCl = Na2Ze + CaCl2", "MgCl2 + Na2Ze = NaCl + MgZe", "NaCl + CH3COONa = NaOH + CH3COOH", "H2O + K2CO3 = CO2 + KOH", "C6H12O6 = C2H5OH + CO2", "2C6H12O6 = H2O + C12H22O11", "CH4 + H2O = CO + H2", "CO + H2O = CO2 + H2", "C + H2O = CO + H2", "NaAlH4 = Na3AlH6 + Al + H2", "S + O2 = SO2", "H2O + CO2 = O2 + C2H6", "H2O + CO2 = O2 + C3H8", "H2O + CO2 = O2 + C4H10", "C2H4 + O2 = CO2 + H2O", "Fe + H2S = FeS + H", "C + H2 = CH4", "NaF + H2S = Na2S + HF", "CO2 + H2O = H4CO4", "HX + MOH = MX + HOH", "K + AlSO4 = Al + KSO4", "carbon + oxygen = carbon-dioxide", "Fe2O3 + C = Fe + CO2", "methane + oxygen = carbon-dioxide + water", "N2O3 + H2O  = HNO2", "CaCO3 =  CaO + CO2", "NaF + H2S = Na2S + HF", "CO2 + H2O = H4CO4", "HX + MOH = MX + HOH", "K + AlSO4 = Al + KSO4", "C2H6 + O2 = CH3COO + H2O", "Na + AIBr3 = AI + NaBr", "Na + Co2PO4 = Co + NaPO4", "C4H9Br + C2H9NaO5 = C6H12O2 + NaBr + H2O", "P4 + Ca(OH)2 + H2O = PH3 + CaHPO3", "HCl + Zi = H2 + ZiCl2", "CuSO4 + HgCl = Cu2Cl2 + HgSO4", "Ru + Cl + Pb3As2 = Ru2As3 + PbCl2", "Ru + Cl2 + Pb3As2 = Ru2As3 + PbCl3", "C4H5SO + O2 = CO2 + SO4 + H2O", "RuCl2 + Pb3As2 = Ru3As2 + PbCl2", "BaCO3 + Al = BaO + Al3C4 + Al2O3", "PO4H3 + NaOH = PO4Na3 + H2O", "Cu5O2 = Cu + O2", "C6H2O4 + H2O = C2H2O4 + CH4O", "C6H11O11 + O = CO2 + H2O", "As25 + KBrO3 + H2O = KBr + H3AsO4", "C3H4O + KMnO4 + H2O = MnO2 + KOH + C3H5O4K", "LiH = H2 + Li2", "CH4 + SO3 = H2S + CO2 + H2", "KHCO3 = C2K2O4 + H2O + O2", "Na + HC2H5OH + HOH = C3H6O2 + H2O + SO2 = Na2SO4 + H2", "C4H7O2 + O2 = C2H6O + CH3COO", "Al2O3 + HNO3 = Al3 + NO3 + H2O", "Ag2NO3 + CrBr2 = AgBr + CrNO3", "OH + C20H14O4 = H2CO2 + H2O", "C5H4O2 + H2 = C5H8 + H2O", "C16H30O2 + C10H24 = C16H32O2 + C6H6", "C2H12O6 + H2SO4 = CO2 + SO2 + H2O", "CaH + O2 = Ca + H2O", "P2O5 + Cl2 + CO = PCl5 + CO2", "N2 + H2O = H3N NH4 + PO4 = NH3 + H3PO4", "Fe + HCl + K2Cr2O7 = FeCl2 + KCl + CrCl3 + H2O", "Na2HPO4 + H2O = NaOH + PO4 + H", "Fe5S2 + O2 = Fe2O3 + SO2", "KMnO4 + C10H24 = KMnO2 + CO2 + H2O", "C2H5COH + CH3COOH = CH3COOC2H5", "H2S + KOH = K2S + H2O", "HgCl2 + Al = AlCl3 + Hg",
+      "C7H8 + CHNO3 = C7H5 + N3O6 + H2O", "CH4 + S8 = C2S + H2S", "SO2 + Cl = SOCl2 + ClO2", "FeCl3 + Li = LiCl + Fe", "V3O3 + H2 = V203 + H2O", "Fe3Al2 + O2 = Al2O3 + Fe", "Fe5S2 + O2 = Fe2O3 + SO2", "NH4 + PO4 = NH3 + H3PO4", "Na + Cl = NaCl", "Ti + HNO3 = Ti(NO3)4 + H", "KCl + H8N2O4S = K2O4S + NH4Cl", "BeO + H2O = HO + Be2O", "N2H3 + O2 = NO4 + H2O", "Zn + H2SO3 = Zn2(SO3) + H2", "K2S + H2O + O2 = K2S2O3 + KOH", "Si3H3 + O3 = SiO2 + H2O3", "Sc + C = ScC3", "Zr3P4 + O2 = Zr2O3 + P4", "LiNO3 = Li2 + N2 + O2", "O2 + P = P2O4", "HSO4 + Zn = ZnSO4 + H2", "Na + Cl = NaCl", "TeCl4 + Zn + HCl = H2Te + ZnCl2", "Al2S3 = Al3 + S", "Al + O2 = Al2O3", "Mg + O2 = MgO", "NH3 + C2H4 = C2H6 + N2", "S2 + K2SO3 = K2S2O3", "CH4 + HO2 = CO2 + H2", "NaCl + ZnCO3 = ZnCl2 + Na2CO3", "AlI + F2 = AlF + I2", "Fe3CO3 + Cs = CsCO3 + Fe", "CO2 + H2O = CH3 + H2O", "SiO2 + H2O3 = SiH3 + O2", "H2S + HNO3 = S + NO + H2O", "CH4 + CS2 = C2H6S", "SiO2 + H2O3 = SiH3 + O2", "Al + NH4NO3 = N2 + Al2O3 + H2O", "S + HNO3 = H2SO4 + NO2 + H2O", "NH4ClO4 = H2O + O2 + N2 + Cl2", "Br2 + C2H6 = CBr4 + H2", "CaCO3 = CaO + CO2", "N2O3 + H2O = HNO2", "P4O10 + H2O = H3PO4", "KF + O2 = KO + F2", "Cr2F2 + H2O = Cr + HF + O2", "C8H18 + O2 = CO2 + H2O",
+      "Cl2 + Bi2O3 + H2O = Bi2O5 + HCl", "BaSO3 + O2 = BaSO4", "H2O + Mg = H + MgO", "C9H20 + O2 = CO2 + H2O", "Al + F = AlF3", "PO4 + Li2 = Li3PO4", "Al + Ce = AlCe2", "CaS + O2 = CaSO3", "PbS2 + Fe = Fe2S3 + Pb", "KCl3 = KCl + O2", "SiCl4 + H2O = H4SiO4 + HCl", "H2Co3 = Co + H", "H2SO4 + HI = H2S + I2 + H2O", "Na2CO3 + HCl = NaCl + H2O + CO2", "C7H6O2 + HCl = NaCl + H2O + CO2", "Na2O + PO = PNa + O2", "KClO3 = KCl + O2", "magnesium + oxygen = magnesium-oxide", "SiCl4 + H2O  =  H4SiO4 + HCl", "CuO + HCl  = CuCl2 + H2O", "Al + HCl = AlCl3 + H2", "H2SO4 + HI = H2S + I2 + H2O", "C7H6O2 + O2 = CO2 + H2O", "sodium + chloride = sodium-chloride", "Na2CO3 + HCl = NaCl + H2O + CO2", "SiCl4 + H2O = H4SiO4 + HCl", "Al + HCl = AlCl3 + H2", "Fe2(SO4)3 + KOH = K2SO4 + Fe(OH)3", "Ca(PO4)2 + SiO2 → P4O10 + CaSiO3", "Al2(SO4)3 + Ca(OH)2 → Al(OH)3 + CaSO4", "CaI2 + Na2O4S = CaSO4 + INa", "KI3 + Na2S = S + NaI + KI", "Na + FePO4 = Fe + Na3PO4", "AgOH + Ni2 = Ni(OH)2 + Ag", "Fe + MgS = Mg + Fe2S3", "S + F2 = FS6", "MgO + K = Mg + K2O", "SnO2 + H2 = Sn + H2O", "CaO2 + P2O5 = Ca3P2 + O2",
+      "LiOH + Co2 = LiCo3 + OH", "Cu(OH)2 + H2 = Cu2 + H2O", "NO2 + H2O = HN3 + O2", "oxygen + hydrogen = water", "butane + oxygen = carbon-dioxide + water", "sodium + oxygen = sodium-oxide", "aluminium + oxygen = aluminium-oxide", "calcium + oxygen = calcium-oxide", "calcium-hydroxide + carbon-dioxide = calcium-carbonate + water", "magnesium + oxygen = magnesium-oxide", "sodium + water = sodium-hydroxide + hydrogen",
+    ];
+    $("#tags1").autocomplete({
+      source: availableTags
+    });
+  });
+</script>
+
+</body>
+<style>
+  .center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+</style>
+
+</html>
+
+<style>
+  .container {
+    height: 100px;
+    position: relative;
+  }
+</style>
